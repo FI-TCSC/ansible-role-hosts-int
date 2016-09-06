@@ -3,7 +3,7 @@
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 
-# Entries for Ansible managed hosts
+# Hosts from ansible hosts file
 {% for host in groups['all'] %}
 {% if hostvars[host].int_ip_addr is defined %}
 {{ hostvars[host].int_ip_addr }} {{ host }}.{{ intDomain }}.{{ siteDomain }} {{ host }}
