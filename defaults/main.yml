@@ -1,0 +1,6 @@
+---
+# defaults file for ansible-role-hosts-int
+
+intDomain: 'int'
+siteDomain: 'example.com'
+hosts_int_file_to_populate: '/etc/hosts'

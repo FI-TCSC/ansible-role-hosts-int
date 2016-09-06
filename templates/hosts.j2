@@ -1,0 +1,14 @@
+# {{ ansible_managed }}
+
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+# Entries for Ansible managed hosts
+{% for host in groups['all'] %}
+{% if hostvars[host].int_ip_addr is defined %}
+{{ hostvars[host].int_ip_addr }} {{ host }}.{{ intDomain }}.{{ siteDomain }} {{ host }}
+{% endif %}
+{% if hostvars[host].ib_ip_addr is defined %}
+{{ hostvars[host]['int_ip_addr'] }} {{ host }}-ib.{{ intDomain }}.{{ siteDomain }} {{ host }}-ib
+{% endif %}
+{% endfor %}
