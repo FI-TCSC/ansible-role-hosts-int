@@ -1,5 +1,9 @@
 ---
-- hosts: localhost
-  remote_user: root
-  roles:
-    - ansible-role-hosts-int
+
+ - hosts: localhost
+   remote_user: root
+   vars:
+     - hosts_int_file_to_populate: "/tmp/hosts"
+
+   roles:
+     - ansible-role-hosts-int
