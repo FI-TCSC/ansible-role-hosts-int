@@ -15,9 +15,9 @@ address.
 Role Variables
 --------------
 
-intDomain: The internal subdomainname
-siteDomain: The external site domain name
-hosts_int_file_to_populate: /etc/hosts
+	intDomain: The internal subdomainname
+	siteDomain: The external site domain name
+	hosts_int_file_to_populate: /etc/hosts
 
 The generated hosts file will have entries with the domain intDomain.siteDomain.
 
