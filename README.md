@@ -1,6 +1,8 @@
 ansible-role-hosts-int
 ======================
 
+[![Build Status](https://travis-ci.org/jabl/ansible-role-hosts-int.svg?branch=master)](https://travis-ci.org/jabl/ansible-role-hosts-int)
+
 Populate /etc/hosts with IP addresses for an internal cluster network, including IB addresses.
 
 Requirements
