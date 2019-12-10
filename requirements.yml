@@ -1,0 +1,4 @@
+---
+
+- src: https://github.com/fgci-org/ansible-role-hosts-int
+  path: ../
