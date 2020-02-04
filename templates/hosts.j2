@@ -3,12 +3,17 @@
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 
-# Hosts from ansible hosts file
-{% for host in groups['all'] %}
+# Hosts from ansible hosts file, internal ip
+{% for host in groups['all'] | sort %}
 {% if hostvars[host].int_ip_addr is defined %}
 {{ hostvars[host].int_ip_addr }} {{ hostvars[host].inventory_hostname_short }}.{{ intDomain }}.{{ siteDomain }} {{ hostvars[host].inventory_hostname_short }}
 {% endif %}
+{% endfor %}
+
+# Hosts from ansible hosts file, infiniband ip
+{% for host in groups['all'] | sort %}
 {% if hostvars[host].ib_ip_addr is defined %}
 {{ hostvars[host].ib_ip_addr }} {{ hostvars[host].inventory_hostname_short }}-ib.{{ intDomain }}.{{ siteDomain }} {{ hostvars[host].inventory_hostname_short }}-ib
 {% endif %}
 {% endfor %}
+
